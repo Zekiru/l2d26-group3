@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><h1>Project Name</h1></a>
+        <hr>
+    </header>
+    <nav>
+        <p>Welcome, User!</p>
+        <form>
+            <input type="hidden">
+            <button class="logout-btn">Logout</button>
+        </form>
+    </nav>
+    <br>
+    <div id="content">
+        <div class="row">
+            <h2 class="align-left">Map</h2>
+        </div>
+
+        <!-- TO-DO: Map UI -->
+        <div class="embed-map-fixed" style="margin: auto;">
+            <div class="embed-map-container">
+                <iframe class="embed-map-frame" frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ateneo%20de%20manila&t=&z=14&ie=UTF8&iwloc=B&output=embed">
+                </iframe>
+                <a href="https://funclicker.org"
+                style="font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden">
+                Fun Clicker</a>
+            </div>
+            <style>
+                .embed-map-fixed{position:relative;text-align:right;width:600px;height:400px;}
+                .embed-map-container{overflow:hidden;background:none!important;width:600px;height:400px;}
+                .embed-map-frame{width:600px!important;height:400px!important;}
+            </style>
+        </div>
+        <!-- source: mapembed.org -->
+    </div>
+
+    <footer></footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
