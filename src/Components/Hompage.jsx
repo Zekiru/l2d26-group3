@@ -1,6 +1,6 @@
-import Navbar from 'Navbar'
-import SwipePanel from 'SwipePanel'
-import MapPanel from 'MapPanel'
+import Navbar from './Navbar'
+import TinderPanel from './TinderPanel'
+import MapPanel from './MapPanel'
 
 
 function Homepage(){
@@ -8,7 +8,7 @@ function Homepage(){
         <div className="App">
             <Navbar />
             <div className='homepage'>
-                <SwipePanel />
+                <TinderPanel />
                 <MapPanel />
             </div>
         </div>

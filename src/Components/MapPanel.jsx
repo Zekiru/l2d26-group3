@@ -5,3 +5,5 @@ function MapPanel(){
         </div>
     )
 }
+
+export default MapPanel
