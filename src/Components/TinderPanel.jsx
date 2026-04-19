@@ -12,6 +12,7 @@ function TinderPanel(){
 
     return (
         <div className="tinder-panel">
+            {deck.length === 0 && <p className="no-more">No more restaurants!</p>}
             <div className='card-stack'>
                 {deck.length > 0 && (
                     <SwipeCard 
@@ -21,7 +22,6 @@ function TinderPanel(){
                     />
                 )}
             </div>
-            {deck.length === 0 && <p className="no-more">No more restaurants!</p>}
         </div>
     )
 }
