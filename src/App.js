@@ -1,9 +1,14 @@
+import { useState } from 'react'
+import Homepage from './Components/Hompage';
 import './App.css';
 
-import Homepage from './Components/Hompage';
-
 function App() {
-  return <Homepage />
+  const [currentPage, setCurrentPage] = useState('home')
+  return (
+    <>
+    {currentPage === 'home' && <Homepage setCurrentPage={setCurrentPage} />}
+    </>
+  )
 }
 
 export default App;

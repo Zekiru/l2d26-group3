@@ -1,7 +1,18 @@
-function Navbar(){
+function Navbar( {setCurrentPage} ){
     return (
         <nav className="navbar">
-            <h2> NAME OF APP</h2>
+            <span className="logo" onClick={()=> setCurrentPage('home')}><h2>KatEats</h2></span>
+            <div className="nav-links">
+                <button onClick={() => {
+                    console.log("map clicked")
+                    setCurrentPage('map')
+                }}> Map </button>
+                
+                <button onClick={() => {
+                    console.log("team clicked")
+                    setCurrentPage('team')
+                }}> Team </button>
+            </div>
         </nav>
     )
 }
