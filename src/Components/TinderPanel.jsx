@@ -13,13 +13,13 @@ function TinderPanel(){
     return (
         <div className="tinder-panel">
             <div className='card-stack'>
-                {deck.map(restaurant => (
+                {deck.length > 0 && (
                     <SwipeCard 
-                        key={restaurant.id} 
-                        restaurant={restaurant}
+                        key={deck[0].id} 
+                        restaurant={deck[0]}
                         onSwipe={handleSwipe}
                     />
-                ))}
+                )}
             </div>
             {deck.length === 0 && <p className="no-more">No more restaurants!</p>}
         </div>
@@ -27,3 +27,19 @@ function TinderPanel(){
 }
 
 export default TinderPanel
+
+//all at once
+    // return (
+    //     <div className="tinder-panel">
+    //         <div className='card-stack'>
+    //             {deck.map(restaurant => (
+    //                 <SwipeCard 
+    //                     key={restaurant.id} 
+    //                     restaurant={restaurant}
+    //                     onSwipe={handleSwipe}
+    //                 />
+    //             ))}
+    //         </div>
+    //         {deck.length === 0 && <p className="no-more">No more restaurants!</p>}
+    //     </div>
+    // )
