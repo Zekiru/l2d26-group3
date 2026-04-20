@@ -4,7 +4,7 @@ import { Icon, divIcon, point } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { useState, useEffect } from "react";
 
-export default function Map({markers}) {
+export default function Map({markers, setCurrentPage}) {
   const [position, setPosition] = useState(null);
   const [accuracy, setAccuracy] = useState(0);
   const [clickPos, setClickPos] = useState(null);
