@@ -253,3 +253,95 @@ body {
   border-radius: 30px;
   padding: 32px;
 }
+
+.star{
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.revCard {
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  max-width: 500px;
+  display: grid;
+  gap: 18px;
+  padding: 32px;
+  background: var(--old-lace);
+  border-radius: 16px;
+}
+.revCard > hr {
+  border: 0.5px solid lightgray;
+}
+
+.revcard-description,
+.revcard-overall-rating{
+  background: white;
+  border-radius: 16px;
+  padding: 16px 24px;
+}
+
+.revcard-restaurant-details{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  color: var(--ocean-twilight);
+}
+
+.revcard-restaurant-details > h1{
+  font-size: 1.75rem;
+}
+.revcard-restaurant-details > h4 {
+  color:gray;
+  font-weight: 700;
+}
+
+#dining-emoji{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+  opacity: 60%;
+  grid-row: 1 / -1;
+  aspect-ratio: 1/1;
+  font-size: 3rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+}
+
+.revcard-overall-rating{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.revcard-overall-rating h3{
+  color: gray;
+  font-size: 1rem;
+}
+
+.revcard-overall-rating > h4{
+  font-size: 3rem;
+  color: var(--ocean-twilight);
+}
+
+.revcard-overall-rating > h4 > span {
+  font-size: 1rem;
+  color: lightgray;
+}
+
+#breakdown{
+  color: var(--ocean-twilight);
+}
+
+.criterion {
+  background: white;
+  border-radius: 16px;
+  padding: 0.25rem 24px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
