@@ -4,6 +4,7 @@ import './App.css';
 import Map from './Components/map.jsx' 
 import React from 'react';
 import MeetTheTeam from './Components/MeetTheTeam';
+import { restaurants } from './Data/restaurants.js'
 import { markers } from './Data/markers.js'
 import ReviewPage from './Components/ReviewPage.jsx';
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
     {currentPage === 'home' && <Homepage setCurrentPage={setCurrentPage} />}
-    {currentPage === 'map' && <Map markers={markers} setCurrentPage={setCurrentPage} />}
+    {currentPage === 'map' && <Map markers={restaurants} setCurrentPage={setCurrentPage} />}
     {currentPage === 'resto' && <ReviewPage setCurrentPage={setCurrentPage} />}
     {currentPage === 'team' && <MeetTheTeam setCurrentPage={setCurrentPage} />}
     </>
