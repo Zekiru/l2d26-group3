@@ -2,14 +2,22 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 mt-12">
-      <div className="container mx-auto text-center">
-        <p className="text-sm opacity-75">
-          &copy; {new Date().getFullYear()} L2D26 Group 3. All rights reserved.
+    // bg-[#6D5240] is Coffee Bean
+    // text-[#FCF1DE] is Old Lace
+    <footer className="bg-[#6D5240] text-[#FCF1DE] py-10 mt-auto font-sans">
+      <div className="container mx-auto text-center px-4">
+        {/* Title using Ubuntu font style */}
+        <h4 className="text-xl font-bold mb-2 tracking-wide">L2D26 Group 3</h4>
+        
+        <p className="text-sm opacity-90">
+          &copy; {new Date().getFullYear()} Restaurant Finder Project. All rights reserved.
         </p>
-        <div className="mt-2 space-x-4">
-          <a href="#" className="hover:text-blue-400 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-blue-400 transition-colors">Terms</a>
+        
+        {/* Links using Apricot Cream for hover effect */}
+        <div className="mt-4 space-x-6">
+          <a href="#" className="text-sm hover:text-[#FECB78] transition-colors duration-300">Privacy Policy</a>
+          <a href="#" className="text-sm hover:text-[#FECB78] transition-colors duration-300">Terms of Service</a>
+          <a href="#" className="text-sm hover:text-[#FECB78] transition-colors duration-300">Contact Us</a>
         </div>
       </div>
     </footer>
