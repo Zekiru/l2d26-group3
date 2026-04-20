@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Homepage from './Components/Hompage';
 import './App.css';
+
+import React from 'react';
+import MeetTheTeam from './components/MeetTheTeam';
 import Map from './map.jsx' 
 
 
