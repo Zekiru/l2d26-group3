@@ -58,12 +58,14 @@ export default function Map({markers, setCurrentPage}) {
     }
   }
 
+
   return (
     <div style={{ height: "100vh" }}>
       <MapContainer 
         center={[14.638, 121.075]} 
         zoom={18} 
         scrollWheelZoom={false}
+        doubleClickZoom={false}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -86,6 +88,7 @@ export default function Map({markers, setCurrentPage}) {
           <>
           <MarkerClusterGroup
             chunkedLoading
+            maxClusterRadius={10}
             iconCreateFunction={createCustomClusterIcon}
           >
             {markers.map(marker => (
@@ -97,7 +100,6 @@ export default function Map({markers, setCurrentPage}) {
                     setSelectedMarker(marker);
                   }
                 }}>
-                <Popup>{marker.popUp}</Popup>
                 <Popup autoPan={false} className = "review-popup">
                   <ReviewCard restaurant={marker} variant = "map"></ReviewCard>
                 </Popup>
@@ -182,7 +184,6 @@ function FlyToMarker({ selectedMarker }) {
 
   useEffect(() => {
     if (selectedMarker) {
-      map.flyTo(selectedMarker.geocode, 18); // zoom level 15
       const [lat, lng] = selectedMarker.geocode;
       map.flyTo([lat + 0.0007, lng], 18); 
     }
