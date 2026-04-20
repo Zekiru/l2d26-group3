@@ -1,6 +1,7 @@
 import React from 'react';
-import TeamCard from '../components/TeamCard';
-import Footer from '../components/Footer';
+import TeamCard from '../Components/TeamCard';
+import Footer from '../Components/Footer';
+import Navbar from './Navbar';
 
 // Importing your PNGs
 import rafaelImg from '../assets/team/Raf.png'; 
@@ -11,26 +12,7 @@ import martinaImg from '../assets/team/Martina.png';
 const MeetTheTeam = ({ setCurrentPage }) => {
   return (
     <div className="team-page-container">
-      {/* PLACEHOLDER NAVBAR: This replaces the missing component */}
-      <div style={{ 
-        width: '95%', 
-        margin: '16px auto', 
-        height: '60px', 
-        backgroundColor: 'var(--apricot-cream)', 
-        borderRadius: '30px',
-        border: '5px solid var(--coral-glow)',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 24px'
-      }}>
-        <h2 style={{ color: 'var(--ocean-twilight)', fontFamily: 'Ubuntu' }}>KatEats</h2>
-        <button 
-          onClick={() => setCurrentPage('home')}
-          style={{ marginLeft: 'auto', padding: '5px 15px', borderRadius: '20px', cursor: 'pointer' }}
-        >
-          Back Home
-        </button>
-      </div>
+      <Navbar setCurrentPage={setCurrentPage} />
       
       <main style={{ flexGrow: 1, padding: '40px 0' }}>
       <h1 style={{ 

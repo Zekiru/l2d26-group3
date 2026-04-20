@@ -3,7 +3,7 @@ import Homepage from './Components/Hompage';
 import './App.css';
 import Map from './Components/map.jsx' 
 import React from 'react';
-import MeetTheTeam from './components/MeetTheTeam';
+import MeetTheTeam from './Components/MeetTheTeam';
 
 const markers = [
   {
@@ -35,7 +35,7 @@ function App() {
     {currentPage === 'home' && <Homepage setCurrentPage={setCurrentPage} />}
     {currentPage === 'map' && <Map markers={markers} setCurrentPage={setCurrentPage} />}
     {currentPage === 'resto' && <Homepage setCurrentPage={setCurrentPage} />}
-    {currentPage === 'team' && <Homepage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'team' && <MeetTheTeam setCurrentPage={setCurrentPage} />}
     </>
   )
 }
