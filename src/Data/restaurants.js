@@ -6,6 +6,8 @@ export const restaurants = [
     price: "$$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
+    geocode: [14.637, 121.074],
+    popUp: "This is Tetsuo",
     ratings: {
       overall: 4.5,
       foodAndDrink: 4.7,
@@ -22,6 +24,8 @@ export const restaurants = [
     price: "$$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
+    geocode: [14.637, 121.074],
+    popUp: "This is Tetsuo",
     ratings: {
       overall: 4.3,
       foodAndDrink: 4.5,
@@ -38,6 +42,8 @@ export const restaurants = [
     price: "$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
+    geocode: [14.637, 121.074],
+    popUp: "This is Tetsuo",
     ratings: {
       overall: 4.0,
       foodAndDrink: 4.1,

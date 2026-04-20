@@ -1,7 +1,10 @@
-function MapPanel(){
+import Map from './map.jsx' 
+import { markers } from '../Data/markers.js'
+
+function MapPanel({setCurrentPage}){
     return (
         <div className="map-panel">
-            <p>Map will go here</p>
+            {< Map markers={markers} setCurrentPage={setCurrentPage}/>}
         </div>
     )
 }

@@ -1,15 +1,17 @@
 import Navbar from './Navbar'
 import TinderPanel from './TinderPanel'
 import MapPanel from './MapPanel'
+import Footer from './Footer'
 
-function Homepage( {setCurrentPage}){
+function Homepage( {setCurrentPage} ){
     return(
         <div className="App">
             <Navbar setCurrentPage={setCurrentPage} />
             <div className='homepage'>
                 <TinderPanel />
-                <MapPanel />
+                <MapPanel setCurrentPage={setCurrentPage}/>
             </div>
+            <Footer />
         </div>
     )
 }
