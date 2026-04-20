@@ -71,14 +71,14 @@ export default function Map({markers, setCurrentPage}) {
 
         <MapClickListener setClickPos={setClickPos} />
 
-        {clickPos && (
+    {/*    {clickPos && (
           <Marker position={clickPos}>
             <Popup>
               Lat: {clickPos.lat}<br />
               Lng: {clickPos.lng}
             </Popup>
           </Marker>
-        )}
+        )} */}
 
         {position && (
           <>
