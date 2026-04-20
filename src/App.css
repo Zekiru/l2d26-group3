@@ -209,7 +209,8 @@ body {
 }
 
 .leaflet-container {
-  height: 100vh;
+  flex: 1;
+  height: 100%;
 }
 
 .cluster-icon {
@@ -348,7 +349,9 @@ body {
   background-color: var(--old-lace);
   color: var(--ocean-twilight);
   border-radius: 30px;
-  padding: 32px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
 }
 
 .star{

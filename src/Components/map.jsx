@@ -57,8 +57,7 @@ export default function Map({markers, setCurrentPage}) {
   }
 
   return (
-    <div>
-      <MapNavBar markers={markers} onSelect={setSelectedMarker}/>
+    <div style={{ height: "100vh" }}>
       <MapContainer 
         center={[14.638, 121.075]} 
         zoom={18} 
@@ -68,6 +67,7 @@ export default function Map({markers, setCurrentPage}) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <MapNavBar markers={markers} onSelect={setSelectedMarker}/>
 
         <MapClickListener setClickPos={setClickPos} />
 
