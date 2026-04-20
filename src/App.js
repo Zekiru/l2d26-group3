@@ -7,6 +7,9 @@ function App() {
   return (
     <>
     {currentPage === 'home' && <Homepage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'map' && <Homepage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'resto' && <Homepage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'team' && <Homepage setCurrentPage={setCurrentPage} />}
     </>
   )
 }
