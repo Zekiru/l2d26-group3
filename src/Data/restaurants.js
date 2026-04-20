@@ -5,6 +5,7 @@ export const restaurants = [
     cuisine: "Bakery / American",
     price: "$$",
     image: "https://placehold.co/400x300",
+    description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
     ratings: {
       overall: 4.5,
       foodAndDrink: 4.7,
@@ -13,12 +14,14 @@ export const restaurants = [
       value: 4.0
     }
   },
+
   {
     id: 2,
     name: "Manam",
     cuisine: "Filipino",
     price: "$$",
     image: "https://placehold.co/400x300",
+    description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
     ratings: {
       overall: 4.3,
       foodAndDrink: 4.5,
@@ -27,12 +30,14 @@ export const restaurants = [
       value: 4.2
     }
   },
+
   {
     id: 3,
     name: "Your Local Pizza",
     cuisine: "Italian",
     price: "$",
     image: "https://placehold.co/400x300",
+    description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
     ratings: {
       overall: 4.0,
       foodAndDrink: 4.1,
