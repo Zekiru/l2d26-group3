@@ -1,4 +1,4 @@
-function ReviewCard({restaurant}){
+function ReviewCard({restaurant, variant}){
 
     // turns restaurant data into local variables
     const {name, cuisine, price, description} = restaurant;
@@ -14,6 +14,27 @@ function ReviewCard({restaurant}){
         ))}
         </span>
     )
+    }
+
+    if (variant === "map") {
+        return(
+            <div className='revCard'>
+                <div className='revcard-restaurant-details'>
+                    <div id="dining-emoji">🍽️</div>
+                    <h1>{name}</h1>
+                    <h4>{cuisine} ● Katip ● {price}</h4>                
+                </div>
+                <hr></hr>
+                
+                <div className='revcard-overall-rating'>
+                    <div>
+                        <h3>Overall</h3>
+                        <StarRating score={overall}></StarRating>
+                    </div>
+                    <h4>{overall}<span> / 5</span></h4>
+                </div>
+            </div>
+        );
     }
 
     return (
