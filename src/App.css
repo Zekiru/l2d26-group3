@@ -18,6 +18,15 @@ body {
   color: var(--coffee-bean);
 }
 
+/* --- Meet The Team Page Styles --- */
+.team-page-container {
+  min-height: 100vh !important;
+  /* Using !important to override the teammate's blue body color */
+  background-color: var(--old-lace) !important; 
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   width: 95%;
   margin: 16px auto 0px auto; /* centers it and adds space above */
@@ -74,8 +83,96 @@ body {
   color: var(--coral-glow);
   border-radius: 30px;
   padding: 20px;
+/* --- Meet The Team Page Styles (ASYMMETRICAL LAYOUT) --- */
+}
+
+.team-grid {
+  display: flex;
+  flex-flow: row nowrap; 
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px; /* Widened slightly */
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1400px; /* Widened to support new card shape */
+  margin: 0 auto;
+}
+
+.member-card {
+  /* THE FIX: Replaced vertical stack with a side-by-side flex layout */
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; /* Cards will be full height */
+  justify-content: space-between;
+
+  /* Look & Feel (matching mockup_v2) */
+  background-color: #E2E2E2 !important; /* Light gray from mockup */
+  border-radius: 40px; /* Highly rounded */
+  
+  /* Size of the card */
+  width: 320px; /* Widened the cards */
+  height: 400px; /* Fixed height for consistent look */
+  
+  overflow: hidden; /* Contains the image overflow */
+  position: relative; /* Anchor point for positioned elements */
+  padding: 30px; /* Pushes content in */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* 1. INFO PANEL (LEFT SIDE) */
+.member-info {
+  flex: 1; /* Takes remaining space on the left */
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Aligns text to top-left */
+  z-index: 10; /* Keeps text above the image */
+  pointer-events: none; /* Stops text from blocking clicks (optional) */
+  color: #000; /* Matching mockup v2 */
+  font-family: 'Ubuntu', sans-serif;
+  padding-right: 20px; /* Gathers text, creates space for image */
+}
+
+.member-image-side-wrapper {
+  position: absolute;
+  right: 0px;       /* Moved to the very edge */
+  bottom: 0px;      /* Rests on the bottom */
+  
+  width: 200px;     /* Made the container slightly wider */
+  height: 280px;    /* Made the container taller */
+    
+  overflow: visible; /* Changed from hidden to visible so they can pop out */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.member-image-side-wrapper img {
+  width: auto;
+  /* Increasing this percentage makes them look "bigger" */
+  height: 110%;      
+  
+  object-fit: contain;
+  object-position: bottom right;
+  
+  /* This helps with the "transparency" look */
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); 
+}
+
+.card-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: auto; /* Pushes the icons to the bottom of the text area */
+  padding-bottom: 10px;
+}
+
+.social-icon {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -299,6 +396,12 @@ body {
 #dining-emoji{
   display: flex;
   justify-content: center;
+  font-size: 1.4rem;
+  color: var(--ocean-twilight);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  width: 30px;
+  height: 30px;
   align-items: center;
   background: lightgray;
   opacity: 60%;
@@ -315,6 +418,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.social-icon:hover {
+  color: var(--coral-glow);
+  transform: scale(1.2);
 }
 
 .revcard-overall-rating h3{
@@ -344,4 +452,57 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.footer-container {
+  background-color: var(--ocean-twilight);
+  color: var(--old-lace);
+  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+  /* Creates a nice curve at the top of the footer */
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-group-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--apricot-cream); /* Pushes the gold color for emphasis */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: var(--old-lace);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--coral-glow);
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  border-top: 1px solid rgba(252, 241, 222, 0.1);
+  padding-top: 15px;
 }

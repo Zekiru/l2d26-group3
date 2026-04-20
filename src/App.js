@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Homepage from './Components/Hompage';
 import './App.css';
 import Map from './Components/map.jsx' 
+import React from 'react';
+import MeetTheTeam from './components/MeetTheTeam';
 
 const markers = [
   {
