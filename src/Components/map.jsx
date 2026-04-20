@@ -3,6 +3,8 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, CircleMarker, useMapEve
 import { Icon, divIcon, point } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { useState, useEffect } from "react";
+import ReviewCard from './ReviewCard';
+
 
 export default function Map({markers, setCurrentPage}) {
   const [position, setPosition] = useState(null);
@@ -96,6 +98,9 @@ export default function Map({markers, setCurrentPage}) {
                   }
                 }}>
                 <Popup>{marker.popUp}</Popup>
+                <Popup autoPan={false} className = "review-popup">
+                  <ReviewCard restaurant={marker} variant = "map"></ReviewCard>
+                </Popup>
               </Marker>
             ))}
           </MarkerClusterGroup>
@@ -178,6 +183,8 @@ function FlyToMarker({ selectedMarker }) {
   useEffect(() => {
     if (selectedMarker) {
       map.flyTo(selectedMarker.geocode, 18); // zoom level 15
+      const [lat, lng] = selectedMarker.geocode;
+      map.flyTo([lat + 0.0007, lng], 18); 
     }
   }, [selectedMarker, map]);
 
