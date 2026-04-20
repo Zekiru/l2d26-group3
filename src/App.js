@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React from 'react';
+import MeetTheTeam from './components/MeetTheTeam';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* This renders your entire page component. 
+        Everything you built in MeetTheTeam.js (the cards, the photos, the footer) 
+        will now show up when you run 'npm start'.
+      */}
+      <MeetTheTeam />
     </div>
   );
 }
