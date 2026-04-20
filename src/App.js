@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Map from './map.jsx' 
+
+
+  const markers = [
+    {
+      name: "Tetsuo",
+      geocode: [14.637, 121.074],
+      popUp: "This is Tetsuo"
+    },
+    {
+      name: "BonChon",
+      geocode: [14.638, 121.074],
+      popUp: "This is BonChon"
+    },
+    {
+      name: "Cinnabon",
+      geocode: [14.6375, 121.075],
+      popUp: "This is Cinnabon"
+    },
+    {
+      name: "Kenny Rogers",
+      geocode: [14.637503209937096, 121.0741026954652],
+      popUp: "This is Kenny Rogers"
+    }
+  ]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Map markers = {markers}></Map>
   );
 }
 
