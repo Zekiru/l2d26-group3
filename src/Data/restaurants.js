@@ -1,13 +1,13 @@
 export const restaurants = [
   {
     id: 1,
-    name: "Wildflour Cafe",
     cuisine: "Bakery / American",
     price: "$$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
-    geocode: [14.637, 121.074],
-    popUp: "This is Tetsuo",
+    name: "Dimsum Treats",
+    geocode: [14.641067784397437, 121.07431948184968],
+    popUp: "This is Dimsum Treats",
     ratings: {
       overall: 4.5,
       foodAndDrink: 4.7,
@@ -19,13 +19,13 @@ export const restaurants = [
 
   {
     id: 2,
-    name: "Manam",
     cuisine: "Filipino",
     price: "$$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
-    geocode: [14.638, 121.074],
-    popUp: "This is BonChon",
+    name: "Tetsuo",
+    geocode: [14.640781133731318, 121.07432484626771],
+    popUp: "This is Tetsuo",
     ratings: {
       overall: 4.3,
       foodAndDrink: 4.5,
@@ -37,13 +37,13 @@ export const restaurants = [
 
   {
     id: 3,
-    name: "Your Local Pizza",
     cuisine: "Italian",
     price: "$",
     image: "https://placehold.co/400x300",
     description: "Restaurant descriptive review placeholder. This restaurant description should be around 1-3 sentences.",
-    geocode: [14.6375, 121.075],
-    popUp: "This is Cinnabon",
+    name: "Samgyupsalamat",
+    geocode: [14.6368860, 121.07403],
+    popUp: "This is Samgyupsalamat",
     ratings: {
       overall: 4.0,
       foodAndDrink: 4.1,
@@ -52,4 +52,6 @@ export const restaurants = [
       value: 4.3
     }
   },
+
+
 ]
