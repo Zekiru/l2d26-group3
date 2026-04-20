@@ -25,24 +25,6 @@ body {
   background-color: var(--old-lace) !important; 
   display: flex;
   flex-direction: column;
-:root {
-  --ocean-twilight: #2E41AFff;
-  --apricot-cream: #FECB78ff;
-  --coral-glow: #F68660ff;
-  --coffee-bean: #6D5240ff;
-  --old-lace: #FCF1DEff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--ocean-twilight);
-  font-family: 'Open Sans', serif;
-  color: var(--coffee-bean);
 }
 
 .navbar {
@@ -102,6 +84,7 @@ body {
   border-radius: 30px;
   padding: 20px;
 /* --- Meet The Team Page Styles (ASYMMETRICAL LAYOUT) --- */
+}
 
 .team-grid {
   display: flex;
@@ -440,6 +423,8 @@ body {
 .social-icon:hover {
   color: var(--coral-glow);
   transform: scale(1.2);
+}
+
 .revcard-overall-rating h3{
   color: gray;
   font-size: 1rem;
