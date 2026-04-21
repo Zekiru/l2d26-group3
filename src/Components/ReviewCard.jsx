@@ -1,4 +1,4 @@
-function ReviewCard({restaurant, variant}){
+function ReviewCard({restaurant, variant, setCurrentPage}){
 
     // turns restaurant data into local variables
     const {name, cuisine, price, description} = restaurant;
@@ -21,7 +21,7 @@ function ReviewCard({restaurant, variant}){
             <div className='revCard'>
                 <div className='revcard-restaurant-details'>
                     <div id="dining-emoji">🍽️</div>
-                    <h1>{name}</h1>
+                    <h1 className = "map-resto-name" onClick={() => setCurrentPage("resto")}>{name}</h1>
                     <h4>{cuisine} ● Katip ● {price}</h4>                
                 </div>
                 <hr></hr>

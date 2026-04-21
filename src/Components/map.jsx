@@ -4,9 +4,9 @@ import { Icon, divIcon, point } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { useState, useEffect } from "react";
 import ReviewCard from './ReviewCard';
+import Footer from './Footer';
 
-
-export default function Map({markers, setCurrentPage}) {
+export default function Map({markers, setCurrentPage, variant}) {
   const [position, setPosition] = useState(null);
   const [accuracy, setAccuracy] = useState(0);
   const [clickPos, setClickPos] = useState(null);
@@ -71,7 +71,7 @@ export default function Map({markers, setCurrentPage}) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapNavBar markers={markers} onSelect={setSelectedMarker}/>
+        <MapNavBar markers={markers} onSelect={setSelectedMarker} setCurrentPage={setCurrentPage} variant={variant}/>
 
         <MapClickListener setClickPos={setClickPos} />
 
@@ -101,7 +101,7 @@ export default function Map({markers, setCurrentPage}) {
                   }
                 }}>
                 <Popup autoPan={false} className = "review-popup">
-                  <ReviewCard restaurant={marker} variant = "map"></ReviewCard>
+                  <ReviewCard restaurant={marker} variant = "map" setCurrentPage={setCurrentPage}></ReviewCard>
                 </Popup>
               </Marker>
             ))}
@@ -123,11 +123,14 @@ export default function Map({markers, setCurrentPage}) {
         <FlyToMarker selectedMarker={selectedMarker}/>
 
       </MapContainer>
+
+      {variant !== "panel" && <Footer/>}
+
     </div>
   )
 }
 
-function MapNavBar({markers, onSelect}) {
+function MapNavBar({markers, onSelect, setCurrentPage, variant}) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -153,7 +156,8 @@ function MapNavBar({markers, onSelect}) {
       attribution = <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Catalin Fertu - Flaticon</a>/>
       <input
         type="text"
-        placeholder='Search KatEat...'
+        className={`input ${variant === "panel" ? "panel" : ""}`}
+        placeholder='Search KatEats...'
         value={query}
         onChange={search}
       />
@@ -175,7 +179,13 @@ function MapNavBar({markers, onSelect}) {
           ))}
         </div>
       )}
-    </div>
+      {variant !== "panel" &&
+        <img src={require("./img/home-icon.png")} className = "home-icon" alt="home-icon"
+          attribution = <a href="https://www.flaticon.com/free-icons/housing" title="housing icons">Housing icons created by Freepik - Flaticon</a>  
+          onClick={() => setCurrentPage("home")}
+        />    
+      }
+      </div>
   )
 }
 
