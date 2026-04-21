@@ -7,7 +7,10 @@ function TinderPanel(){
 
     const handleSwipe = (direction, id) => {
         console.log(`Swiped ${direction} on restaurant ${id}`)
-        setDeck(deck.filter(r => r.id !== id))
+        setDeck(prev => {
+        const remainingCards = prev.filter(r => r.id !== id)
+        return remainingCards.length === 0 ? restaurants : remainingCards  // ← reset when empty
+        })
     }
 
     return (
