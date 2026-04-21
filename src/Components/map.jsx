@@ -195,7 +195,7 @@ function FlyToMarker({ selectedMarker }) {
   useEffect(() => {
     if (selectedMarker) {
       const [lat, lng] = selectedMarker.geocode;
-      map.flyTo([lat + 0.0007, lng], 18); 
+      map.flyTo([lat + 0.0003, lng], 18); 
     }
   }, [selectedMarker, map]);
 
