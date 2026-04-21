@@ -18,7 +18,6 @@ body {
   color: var(--coffee-bean);
 }
 
-/* --- Meet The Team Page Styles --- */
 .team-page-container {
   min-height: 100vh !important;
   /* Using !important to override the teammate's blue body color */
@@ -88,7 +87,6 @@ body {
   color: var(--coral-glow);
   border-radius: 30px;
   padding: 20px;
-/* --- Meet The Team Page Styles (ASYMMETRICAL LAYOUT) --- */
 }
 
 .team-grid {
@@ -104,7 +102,6 @@ body {
 }
 
 .member-card {
-  /* THE FIX: Replaced vertical stack with a side-by-side flex layout */
   display: flex;
   flex-direction: row; 
   align-items: stretch; /* Cards will be full height */
@@ -130,7 +127,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* 1. INFO PANEL (LEFT SIDE) */
+
 .member-info {
   flex: 1; /* Takes remaining space on the left */
   display: flex;
@@ -145,13 +142,13 @@ body {
 
 .member-image-side-wrapper {
   position: absolute;
-  right: 0px;       /* Moved to the very edge */
-  bottom: 0px;      /* Rests on the bottom */
+  right: 0px;       
+  bottom: 0px;      
   
-  width: 200px;     /* Made the container slightly wider */
-  height: 280px;    /* Made the container taller */
+  width: 200px;     
+  height: 280px;    
     
-  overflow: visible; /* Changed from hidden to visible so they can pop out */
+  overflow: visible; 
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -159,13 +156,11 @@ body {
 
 .member-image-side-wrapper img {
   width: auto;
-  /* Increasing this percentage makes them look "bigger" */
   height: 110%;      
   
   object-fit: contain;
   object-position: bottom right;
   
-  /* This helps with the "transparency" look */
   filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); 
 }
 
@@ -176,10 +171,24 @@ body {
   padding-bottom: 10px;
 }
 
-.social-icon {
+.social-icon, .social-icon a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none !important; 
+  border-bottom: none !important;
+  outline: none;
+}
+
+.social-icon:hover {
+  color: var(--coral-glow);
+  transform: scale(1.2);
+  text-decoration: none !important;
+}
+
+.social-icon img {
+  border: none;
+  display: block;
 }
 
 .card-stack{
@@ -441,11 +450,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.social-icon:hover {
-  color: var(--coral-glow);
-  transform: scale(1.2);
 }
 
 .revcard-overall-rating h3{
