@@ -1,20 +1,11 @@
+import StarRating from "./StarGenerator";
+
 function ReviewCard({restaurant, variant, setCurrentPage}){
 
     // turns restaurant data into local variables
     const {name, cuisine, price, description} = restaurant;
     let {overall, foodAndDrink, service, ambiance, value} = restaurant.ratings;
 
-    function StarRating({ score }) {
-    return (
-        <span className="star">
-        {[1, 2, 3, 4, 5].map((star) => (
-            <span key={star} style={{ color: star <= Math.round(score) ? '#F0A202' : '#444' }}>
-            ★
-            </span>
-        ))}
-        </span>
-    )
-    }
 
     if (variant === "map") {
         return(

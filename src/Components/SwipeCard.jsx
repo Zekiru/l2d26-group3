@@ -1,5 +1,6 @@
 import { useMotionValue, useTransform, animate } from "framer-motion"
 import { motion } from "framer-motion"
+import StarRating from "./StarGenerator"
 
 function SwipeCard({ restaurant, onSwipe }) {
     const x = useMotionValue(0)
@@ -36,16 +37,5 @@ function SwipeCard({ restaurant, onSwipe }) {
   )
 }
 
-function StarRating({ score }) {
-  return (
-    <span>
-      {[1, 2, 3, 4, 5].map((star) => (
-        <span key={star} style={{ color: star <= Math.round(score) ? '#F0A202' : '#444' }}>
-          ★
-        </span>
-      ))}
-    </span>
-  )
-}
 
 export default SwipeCard
