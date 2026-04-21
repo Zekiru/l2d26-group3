@@ -1,38 +1,579 @@
-.App {
-  text-align: center;
+:root {
+  --ocean-twilight: #2E41AFff;
+  --apricot-cream: #FECB78ff;
+  --coral-glow: rgb(246, 134, 96);
+  --coffee-bean: #6D5240ff;
+  --old-lace: #FCF1DEff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--ocean-twilight);
+  font-family: 'Open Sans', serif;
+  color: var(--coffee-bean);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.team-page-container {
+  min-height: 100vh !important;
+  /* Using !important to override the teammate's blue body color */
+  background-color: var(--old-lace) !important; 
   display: flex;
   flex-direction: column;
+}
+
+.navbar {
+  width: 95%;
+  margin: 16px auto 0px auto; /* centers it and adds space above */
+  background-color: var( --apricot-cream);
+  border: 5px solid var(--coral-glow);
+  border-radius: 30px;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar h2 {
+  color: var(--ocean-twilight);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  margin-right: auto;
+  margin-left: 30px;
+}
+
+.nav-links button {
+  width: 120px;
+  background-color: var(--coral-glow);
+  color: var(--old-lace);
+  border: 5px solid var(--coral-glow);
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-family: 'Ubuntu', serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links button:hover {
+  background-color: var(--ocean-twilight);
+  border: 5px solid var(--coral-glow);
+}
+
+.homepage {
+  display: flex;
+  height: calc(100vh - 120px);
+  gap: 40px;
+  padding: 20px 30px 0px 30px;
+}
+
+.tinder-panel {
+  flex: 1;
+  background-color: var(--old-lace);
+  color: var(--coral-glow);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.team-grid {
+  display: flex;
+  flex-flow: row nowrap; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: stretch;
+  gap: 25px; /* Widened slightly */
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1400px; /* Widened to support new card shape */
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.member-card {
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; /* Cards will be full height */
+  justify-content: space-between;
+
+  /* Look & Feel (matching mockup_v2) */
+  background-color: #E2E2E2 !important; /* Light gray from mockup */
+  border-radius: 40px; /* Highly rounded */
+  
+  /* Size of the card */
+  width: 320px; /* Widened the cards */
+  height: 400px; /* Fixed height for consistent look */
+  
+  overflow: hidden; /* Contains the image overflow */
+  position: relative; /* Anchor point for positioned elements */
+  padding: 30px; /* Pushes content in */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+
+.member-info {
+  flex: 1; /* Takes remaining space on the left */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns text to top-left */
+  z-index: 10; /* Keeps text above the image */
+  pointer-events: none; /* Stops text from blocking clicks (optional) */
+  color: #000; /* Matching mockup v2 */
+  font-family: 'Ubuntu', sans-serif;
+  padding-right: 20px; /* Gathers text, creates space for image */
+}
+
+.member-image-side-wrapper {
+  position: absolute;
+  right: 0px;       
+  bottom: 0px;      
+  
+  width: 200px;     
+  height: 280px;    
+    
+  overflow: visible; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.member-image-side-wrapper img {
+  width: auto;
+  height: 110%;      
+  
+  object-fit: contain;
+  object-position: bottom right;
+  
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); 
+}
+
+.card-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: auto; /* Pushes the icons to the bottom of the text area */
+  padding-bottom: 10px;
+}
+
+.social-icon, .social-icon a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none !important; 
+  border-bottom: none !important;
+  outline: none;
+}
+
+.social-icon:hover {
+  color: var(--coral-glow);
+  transform: scale(1.2);
+  text-decoration: none !important;
+}
+
+.social-icon img {
+  border: none;
+  display: block;
+}
+
+.card-stack{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+}
+
+.swipe-card {
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  cursor: grab;
+  height: 90%;
+  max-width: 430px;
+  aspect-ratio: 3/4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100vh
+}
+
+.leaflet-container {
+  flex: 1;
+  height: 100%;
+}
+
+.cluster-icon {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.mapnavbar {
+  position: absolute;
+  top: 15px;
+  left: 52px;
+  border-radius: 50px;
+  width: 30%;
+  height: 50px;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.mapnavbar.open {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: "Ubuntu", sans-serif;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 2000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 60%;
+  font-size: 15px;
+  margin-right: 40px;
+}
+
+.input.panel {
+  background: transparent;
+  width: 80%;
+  margin-right: 10px;
+}
+
+.dropdown-item:hover {
+  background: #f2f2f2;
+}
+
+.search-icon {
+  height: 20px;
+  padding-right: 12px;
+}
+
+.navmarker-icon {
+  height: 15px;
+  margin-right: 15px;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+.card-image {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--coffee-bean);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.card-cuisine {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.swipe-label {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.like {
+  left: 20px;
+  border: 3px solid var(--ocean-twilight);
+}
+
+.nope {
+  right: 20px;
+  border: 3px solid var(--coral-glow);
+}
+
+.no-more {
+  text-align: center;
+  color: var(--ocean-twilight);
+}
+
+.map-panel {
+  flex: 2;
+  background-color: var(--old-lace);
+  color: var(--ocean-twilight);
+  border-radius: 30px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-wrapper {
+  flex: 1;
+  min-height: 0;
+  border-radius: 15px;
+  overflow: hidden; /* this is what actually clips the map */
+}
+
+.star{
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.revCard {
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  max-width: 500px;
+  display: grid;
+  gap: 18px;
+  padding: 32px;
+  background: var(--old-lace);
+  border-radius: 16px;
+  min-width: 350px;
+}
+.revCard > hr {
+  border: 0.5px solid lightgray;
+}
+
+.revcard-description,
+.revcard-overall-rating{
+  background: white;
+  border-radius: 16px;
+  padding: 16px 24px;
+}
+
+.revcard-restaurant-details{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  color: var(--ocean-twilight);
+}
+
+.revcard-restaurant-details > h1{
+  font-size: 1.75rem;
+}
+.revcard-restaurant-details > h4 {
+  color:gray;
+  font-weight: 700;
+}
+
+#dining-emoji{
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--ocean-twilight);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  background: lightgray;
+  opacity: 60%;
+  grid-row: 1 / -1;
+  aspect-ratio: 1/1;
+  font-size: 3rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+}
+
+.revcard-overall-rating{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.revcard-overall-rating h3{
+  color: gray;
+  font-size: 1rem;
+}
+
+.revcard-overall-rating > h4{
+  font-size: 3rem;
+  color: var(--ocean-twilight);
+}
+
+.revcard-overall-rating > h4 > span {
+  font-size: 1rem;
+  color: lightgray;
+}
+
+#breakdown{
+  color: var(--ocean-twilight);
+}
+
+.criterion {
+  background: white;
+  border-radius: 16px;
+  padding: 0.25rem 24px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-container {
+  background-color: var(--ocean-twilight);
+  color: var(--old-lace);
+  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+  /* Creates a nice curve at the top of the footer */
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-group-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--apricot-cream); /* Pushes the gold color for emphasis */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: var(--old-lace);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--coral-glow);
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  border-top: 1px solid rgba(252, 241, 222, 0.1);
+  padding-top: 15px;
+}
+
+.review-page{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  margin: 24px;
+  gap: 24px;
+  padding: 24px;
+  justify-content: center;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: auto !important;
+}
+
+
+.leaflet-popup-tip {
+  background: var(--old-lace);
+}
+
+.home-icon {
+  height: 20px;
+  margin-left: 0px;  
+  cursor: pointer;
+}
+
+.map-resto-name{
+  cursor: pointer;
+  width: fit-content;
+}
+
+.map-resto-name:hover{
+  background-color: rgba(246, 134, 96, 0.5) ;
+  text-decoration: underline
 }

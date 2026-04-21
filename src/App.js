@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react'
+import Homepage from './Components/Hompage';
 import './App.css';
+import Map from './Components/map.jsx' 
+import React from 'react';
+import MeetTheTeam from './Components/MeetTheTeam';
+import { restaurants } from './Data/restaurants.js'
+import { markers } from './Data/markers.js'
+import ReviewPage from './Components/ReviewPage.jsx';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    {currentPage === 'home' && <Homepage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'map' && <Map markers={restaurants} setCurrentPage={setCurrentPage} />}
+    {currentPage === 'resto' && <ReviewPage setCurrentPage={setCurrentPage} />}
+    {currentPage === 'team' && <MeetTheTeam setCurrentPage={setCurrentPage} />}
+    </>
+  )
 }
 
 export default App;
