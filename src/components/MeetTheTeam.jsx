@@ -53,7 +53,7 @@ const MeetTheTeam = ({ setCurrentPage }) => {
           name="Gio" 
           role="Dev" 
           image={gioImg} 
-          bio="No.1 Pogi Mirror Selfie" 
+          bio="Gio is just there" 
           socials={{ 
             instagram: "https://instagram.com/glansalty", 
             linkedin: "https://linkedin.com/in/",
