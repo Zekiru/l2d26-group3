@@ -566,6 +566,7 @@ body {
 
 .map-resto-name{
   cursor: pointer;
+  width: fit-content;
 }
 
 .map-resto-name:hover{
