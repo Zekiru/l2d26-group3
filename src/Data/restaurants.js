@@ -8,7 +8,7 @@ export const restaurants = [
   {
     id: 0,
     cuisine: "Dimsum / Chinese",
-    price: "$500",
+    price: "$",
     image: imageList[0],
     description: "A budget-friendly go-to for quick dimsum cravings near Ateneo Campus. Best for siomai rice, steamed snacks, and affordable comfort food between classes.",
     name: "Dimsum Treats",
