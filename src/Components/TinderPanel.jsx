@@ -1,17 +1,6 @@
-import { useState } from 'react'
 import SwipeCard from './SwipeCard'
-import { restaurants } from '../Data/restaurants'
 
-function TinderPanel(){
-    const [deck, setDeck] = useState(restaurants)
-
-    const handleSwipe = (direction, id) => {
-        console.log(`Swiped ${direction} on restaurant ${id}`)
-        setDeck(prev => {
-        const remainingCards = prev.filter(r => r.id !== id)
-        return remainingCards.length === 0 ? restaurants : remainingCards  // ← reset when empty
-        })
-    }
+function TinderPanel( {deck, onSwipe}){
 
     return (
         <div className="tinder-panel">
@@ -21,7 +10,7 @@ function TinderPanel(){
                     <SwipeCard 
                         key={deck[0].id} 
                         restaurant={deck[0]}
-                        onSwipe={handleSwipe}
+                        onSwipe={onSwipe}
                     />
                 )}
             </div>
@@ -30,19 +19,3 @@ function TinderPanel(){
 }
 
 export default TinderPanel
-
-//all at once
-    // return (
-    //     <div className="tinder-panel">
-    //         <div className='card-stack'>
-    //             {deck.map(restaurant => (
-    //                 <SwipeCard 
-    //                     key={restaurant.id} 
-    //                     restaurant={restaurant}
-    //                     onSwipe={handleSwipe}
-    //                 />
-    //             ))}
-    //         </div>
-    //         {deck.length === 0 && <p className="no-more">No more restaurants!</p>}
-    //     </div>
-    // )

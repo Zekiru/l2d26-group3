@@ -1,12 +1,10 @@
 import Map from './map.jsx' 
-import { restaurants } from '../Data/restaurants.js'
-import { markers } from '../Data/markers.js'
 
-function MapPanel({setCurrentPage}){
+function MapPanel({ setCurrentPage, markers }){
     return (
         <div className="map-panel">
             <div className="map-wrapper">
-                {< Map markers={restaurants} setCurrentPage={setCurrentPage} variant = "panel"/>}
+                {< Map markers={markers} setCurrentPage={setCurrentPage} variant = "panel"/>}
             </div>
         </div>
     )
