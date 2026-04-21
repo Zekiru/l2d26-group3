@@ -1,7 +1,7 @@
 function Navbar( {setCurrentPage} ){
     return (
         <nav className="navbar">
-            <span className="logo" onClick={()=> setCurrentPage('home')}><img src="/images/K.png" alt="logo" style={{ height: '50px', width: 'auto', borderRadius: '10px' }}/></span>
+            <span className="logo" onClick={()=> setCurrentPage('home')}><img src="/images/K.png" alt="logo" style={{ height: '70px', width: 'auto', borderRadius: '10px' }}/></span>
             <div className="nav-links">
                 <button onClick={() => {
                     console.log("map clicked")
