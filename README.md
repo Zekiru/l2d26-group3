@@ -1,3 +1,24 @@
+# KatEats
+- *Learn-2-Dev 2026* React Project by **"The Pogis and Martina"**
+- A front-end microsite for restaurant reviews and ratings along Katipunan Avenue
+
+## Developers
+- Martina Llamas
+- Gio Valdez
+- Raf Rafanan
+- Rykie Lenon
+
+## Features
+- [x] Restaurant Reviews 📝
+- [x] Restaurant Ratings ⭐
+- [x] Interactive Map 🗺️
+- [x] Tinder Swipe Cards for each Restaurant ❌|❤️
+
+<img width="1856" height="966" alt="Screenshot 2026-04-21 152204" src="https://github.com/user-attachments/assets/762fce40-98ed-414a-992b-dd81be84d423" />
+
+---
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
