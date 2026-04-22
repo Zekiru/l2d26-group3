@@ -120,7 +120,7 @@ export default function Map({markers, setCurrentPage, variant}) {
           </>
         )}
 
-        <FlyToMarker selectedMarker={selectedMarker}/>
+        <FlyToMarker selectedMarker={selectedMarker} variant={variant}/>
 
       </MapContainer>
 
@@ -189,13 +189,17 @@ function MapNavBar({markers, onSelect, setCurrentPage, variant}) {
   )
 }
 
-function FlyToMarker({ selectedMarker }) {
+function FlyToMarker({ selectedMarker, variant }) {
   const map = useMap();
 
   useEffect(() => {
     if (selectedMarker) {
       const [lat, lng] = selectedMarker.geocode;
-      map.flyTo([lat + 0.0003, lng], 18); 
+      if (variant === "panel") {
+        map.flyTo([lat + 0.0003, lng], 18); 
+      } else {
+        map.flyTo([lat + 0.0009, lng], 18); 
+      }
     }
   }, [selectedMarker, map]);
 

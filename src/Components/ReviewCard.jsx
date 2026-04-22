@@ -15,7 +15,6 @@ function ReviewCard({restaurant, variant, setCurrentPage}){
                     <h1 className = "map-resto-name" onClick={() => setCurrentPage("resto")}>{name}</h1>
                     <h4>{cuisine} ● Katip ● {price}</h4>                
                 </div>
-                <hr></hr>
                 
                 <div className='revcard-overall-rating'>
                     <div>
@@ -35,7 +34,6 @@ function ReviewCard({restaurant, variant, setCurrentPage}){
                 <h1>{name}</h1>
                 <h4>{cuisine} ● Katip ● {price}</h4>                
             </div>
-            <hr></hr>
             
             <div className='revcard-overall-rating'>
                 <div>
